@@ -1,3 +1,13 @@
+# "Framework Vue.js" homework (layout-cli)
+
+## SEMINAR 4
+
+Перевести свой проект (работа с макетом) на Vue CLI. Все компоненты, которые создали с помощью vue.components, необходимо переделать на синтаксис Vue CLI.
+
+##
+
+---
+
 # vuejs_layout_cli
 
 ## Project setup
