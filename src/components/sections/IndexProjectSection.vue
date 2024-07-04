@@ -1,7 +1,47 @@
-@import "vars"
-@import "mixins"
+<script>
+import HeadingRegularBlock from '@/components/blocks/HeadingRegularBlock.vue'
+import ProjectCardBlock from '@/components/blocks/ProjectCardBlock.vue'
+import { parseDate } from '@/utils/utils.js'
+import { projectItems } from '@/services/inputData.js'
 
+export default {
+  name: 'IndexProjectSection',
+  components: {
+    HeadingRegularBlock,
+    ProjectCardBlock
+  },
+  data () {
+    return {
+      title: 'Следите за нашими проектами',
+      subtitle: 'Хорошо известно, что читатель будет отвлекаться на читабельный контент страницы',
+      items: projectItems
+    }
+  },
+  computed: {
+    sortedByDateItems () {
+      return [...this.items].sort((a, b) => {
+        return parseDate(b.date) - parseDate(a.date)
+      })
+    }
+  }
+}
+</script>
 
+<template>
+  <section class="project center">
+    <div class="project-area container">
+      <HeadingRegularBlock :title-text="title" :subtitle-text="subtitle"></HeadingRegularBlock>
+      <div class="project-items">
+        <ProjectCardBlock v-for="(item, index) in sortedByDateItems.slice(0, 4)" :item="item" :card-num="index + 1"
+                          :key="item.id"></ProjectCardBlock>
+      </div>
+    </div>
+  </section>
+</template>
+
+<style scoped lang="sass">
+@import '@/assets/styles/mixins'
+@import '@/assets/styles/vars'
 
 .project
   &-area
@@ -96,10 +136,4 @@
     &-image4
       background-image: url("@/assets/images/index-project4.jpeg")
       border-bottom-left-radius: 4rem
-
-
-
-
-
-
-
+</style>

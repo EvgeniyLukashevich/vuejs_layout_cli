@@ -1,26 +1,18 @@
 <template>
-  <IndexComp></IndexComp>
+  <IndexPageComp></IndexPageComp>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-import IndexComp from '@/pages/IndexComp.vue'
+import IndexPageComp from '@/components/pages/IndexPage.vue'
 
 export default {
   name: 'App',
   components: {
-    IndexComp
+    IndexPageComp
   }
 }
 </script>
 
-<!--<style lang="scss">-->
-<!--#app {-->
-<!--  font-family: Avenir, Helvetica, Arial, sans-serif;-->
-<!--  -webkit-font-smoothing: antialiased;-->
-<!--  -moz-osx-font-smoothing: grayscale;-->
-<!--  text-align: center;-->
-<!--  color: #2c3e50;-->
-<!--  margin-top: 60px;-->
-<!--}-->
-<!--</style>-->
+<style lang="sass">
+
+</style>
