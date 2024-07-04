@@ -1,14 +1,17 @@
 <template>
-  <IndexPageComp></IndexPageComp>
+<!--  <IndexPage></IndexPage>-->
+  <BlogPage></BlogPage>
 </template>
 
 <script>
-import IndexPageComp from '@/components/pages/IndexPage.vue'
+// import IndexPage from '@/components/pages/IndexPage.vue'
+import BlogPage from '@/components/pages/BlogPage.vue'
 
 export default {
   name: 'App',
   components: {
-    IndexPageComp
+    // IndexPage,
+    BlogPage
   }
 }
 </script>
