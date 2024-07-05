@@ -1,17 +1,20 @@
 <template>
 <!--  <IndexPage></IndexPage>-->
-  <BlogPage></BlogPage>
+<!--  <BlogPage></BlogPage>-->
+  <BlogDetailsPage></BlogDetailsPage>
 </template>
 
 <script>
 // import IndexPage from '@/components/pages/IndexPage.vue'
-import BlogPage from '@/components/pages/BlogPage.vue'
+// import BlogPage from '@/components/pages/BlogPage.vue'
+import BlogDetailsPage from '@/components/pages/BlogDetailsPage.vue'
 
 export default {
   name: 'App',
   components: {
     // IndexPage,
-    BlogPage
+    // BlogPage,
+    BlogDetailsPage
   }
 }
 </script>

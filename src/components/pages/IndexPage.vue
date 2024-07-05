@@ -4,7 +4,7 @@ import IndexBannerSection from '@/components/sections/IndexBannerSection.vue'
 import IndexProjectSection from '@/components/sections/IndexProjectSection.vue'
 import MetricsSection from '@/components/sections/MetricsSection.vue'
 import FooterSection from '@/components/sections/FooterSection.vue'
-import BlogCardsSection from '@/components/blocks/BlogCardsSection.vue'
+import BlogCardsSection from '@/components/sections/BlogCardsSection.vue'
 
 export default {
   name: 'IndexPage',
