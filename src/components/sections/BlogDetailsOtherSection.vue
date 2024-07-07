@@ -2,10 +2,12 @@
 import PostCardBlock from '@/components/blocks/PostCardBlock.vue'
 import { parseDate } from '@/utils/utils'
 import { blogItems } from '@/services/inputData'
+import TitleRegular from '@/components/partials/TitleRegular.vue'
 
 export default {
   name: 'BlogDetailsOtherSection',
   components: {
+    TitleRegular,
     PostCardBlock
   },
   props: ['currentTag'],
@@ -35,7 +37,7 @@ export default {
 <template>
   <section class="blog-details-posts center">
     <div class="blog-details-posts-area container">
-      <h2 class="project-heading__title">{{title}}</h2>
+      <TitleRegular :title-text="title"></TitleRegular>
       <PostCardBlock v-for="(item) in filteredByTagItems" :key="item.id"
                      :item="item"></PostCardBlock>
     </div>

@@ -11,7 +11,7 @@ export default {
   data () {
     return {
       uniqueTags: [],
-      curTag: '',
+      selectedTag: '',
       items: blogItems
     }
   },
@@ -21,12 +21,16 @@ export default {
       this.uniqueTags = [...new Set(tags)]
     },
     setCurrentTag (tag) {
-      if (this.currentTag === tag) {
+      if (this.selectedTag === tag) {
+        this.selectedTag = ''
         this.$emit('saveCurrentTag', '')
-        this.curTag = ''
       } else {
+        this.selectedTag = tag
         this.$emit('saveCurrentTag', tag)
-        this.curTag = tag
+      }
+      const postsSection = document.querySelector('.blog-details-posts')
+      if (postsSection) {
+        postsSection.scrollIntoView({ behavior: 'smooth' })
       }
     }
   },
@@ -46,7 +50,7 @@ export default {
         <div class="blog-details__tags-box">
           <p class="blog-details__tags-box__tag"
              v-for="tag in uniqueTags" @click="setCurrentTag(tag)"
-             :class="{ 'selected-tag': tag === curTag }"
+             :class="{ 'selected-tag': tag === selectedTag }"
              :key="tag">
             {{ tag }}</p>
         </div>

@@ -76,6 +76,7 @@ export default {
       left: 50%
       transform: translate(-50%, -50%)
       width: 100%
+      height: 100%
       object-fit: none
       filter: saturate(.5)
       transition: all .3s

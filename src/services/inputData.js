@@ -9,6 +9,18 @@ import projectImage1 from '@/assets/images/index-project1.jpeg'
 import projectImage2 from '@/assets/images/index-project2.jpeg'
 import projectImage3 from '@/assets/images/index-project3.jpeg'
 import projectImage4 from '@/assets/images/index-project4.jpeg'
+import projectImage5 from '@/assets/images/index-project5.jpg'
+import projectImage6 from '@/assets/images/index-project6.jpg'
+import projectImage7 from '@/assets/images/index-project7.jpg'
+import projectImage8 from '@/assets/images/index-project8.jpg'
+import projectImage9 from '@/assets/images/index-project9.jpg'
+import projectImage10 from '@/assets/images/index-project10.jpg'
+import projectImage11 from '@/assets/images/index-project11.jpg'
+import projectImage12 from '@/assets/images/index-project12.jpg'
+import projectImage13 from '@/assets/images/index-project13.jpg'
+import projectImage14 from '@/assets/images/index-project14.jpg'
+import projectImage15 from '@/assets/images/index-project15.jpg'
+import projectImage16 from '@/assets/images/index-project16.jpeg'
 
 const blogItems = [
   {
@@ -117,33 +129,177 @@ const projectItems = [
     id: '1',
     href: 'project_details.html',
     image: projectImage1,
+    images: [projectImage1, projectImage9, projectImage11],
     tags: ['Декор', 'Кухня'],
-    title: 'Современная кухня',
+    place: 'Кухня',
+    title: 'Необычная кухня',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, vero. Alias, explicabo expedita veniam provident, quia excepturi adipisci minima, consectetur modi eaque labore iusto quas aliquid possimus accusantium dolore rerum dignissimos odio? Voluptatum cumque, omnis voluptatem repellendus officiis excepturi eveniet dignissimos hic commodi quaerat praesentium! Maxime odio corrupti recusandae porro beatae laboriosam omnis autem nostrum consequuntur amet cupiditate inventore quod, quis officiis quaerat exercitationem culpa deleniti assumenda ab saepe tenetur aliquid. Atque magni accusamus cupiditate voluptatibus vitae temporibus, autem aperiam neque eligendi ipsam rerum quae? Enim laboriosam, sunt incidunt nihil modi soluta quam ducimus harum corrupti optio iste! Quos, consequuntur.',
     date: '15 ноября, 2022'
   },
   {
     id: '2',
     href: 'project_details.html',
     image: projectImage2,
-    tags: ['Планировка', 'Прихожая'],
-    title: 'Современная кухня',
+    images: [projectImage2, projectImage4, projectImage8, projectImage10, projectImage12],
+    tags: ['Планировка', 'Гостиная'],
+    place: 'Гостиная',
+    title: 'Современная гостиная',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, vero. Alias, explicabo expedita veniam provident, quia excepturi adipisci minima, consectetur modi eaque labore iusto quas aliquid possimus accusantium dolore rerum dignissimos odio? Voluptatum cumque, omnis voluptatem repellendus officiis excepturi eveniet dignissimos hic commodi quaerat praesentium! Maxime odio corrupti recusandae porro beatae laboriosam omnis autem nostrum consequuntur amet cupiditate inventore quod, quis officiis quaerat exercitationem culpa deleniti assumenda ab saepe tenetur aliquid. Atque magni accusamus cupiditate voluptatibus vitae temporibus, autem aperiam neque eligendi ipsam rerum quae? Enim laboriosam, sunt incidunt nihil modi soluta quam ducimus harum corrupti optio iste! Quos, consequuntur.',
     date: '29 октября, 2022'
   },
   {
     id: '3',
     href: 'project_details.html',
     image: projectImage3,
-    tags: ['Декор', 'Столовая'],
+    images: [projectImage1, projectImage9, projectImage11, projectImage3],
+    tags: ['Декор', 'Кухня'],
+    place: 'Кухня',
     title: 'Современная кухня',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, vero. Alias, explicabo expedita veniam provident, quia excepturi adipisci minima, consectetur modi eaque labore iusto quas aliquid possimus accusantium dolore rerum dignissimos odio? Voluptatum cumque, omnis voluptatem repellendus officiis excepturi eveniet dignissimos hic commodi quaerat praesentium! Maxime odio corrupti recusandae porro beatae laboriosam omnis autem nostrum consequuntur amet cupiditate inventore quod, quis officiis quaerat exercitationem culpa deleniti assumenda ab saepe tenetur aliquid. Atque magni accusamus cupiditate voluptatibus vitae temporibus, autem aperiam neque eligendi ipsam rerum quae? Enim laboriosam, sunt incidunt nihil modi soluta quam ducimus harum corrupti optio iste! Quos, consequuntur.',
     date: '3 декабря, 2022'
   },
   {
     id: '4',
     href: 'project_details.html',
     image: projectImage4,
-    tags: ['Декор', 'Гостинная'],
-    title: 'Современная кухня',
+    images: [projectImage4, projectImage2, projectImage8, projectImage10, projectImage12],
+    tags: ['Декор', 'Гостиная'],
+    place: 'Гостиная',
+    title: 'Прекрасная гостиная',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, vero. Alias, explicabo expedita veniam provident, quia excepturi adipisci minima, consectetur modi eaque labore iusto quas aliquid possimus accusantium dolore rerum dignissimos odio? Voluptatum cumque, omnis voluptatem repellendus officiis excepturi eveniet dignissimos hic commodi quaerat praesentium! Maxime odio corrupti recusandae porro beatae laboriosam omnis autem nostrum consequuntur amet cupiditate inventore quod, quis officiis quaerat exercitationem culpa deleniti assumenda ab saepe tenetur aliquid. Atque magni accusamus cupiditate voluptatibus vitae temporibus, autem aperiam neque eligendi ipsam rerum quae? Enim laboriosam, sunt incidunt nihil modi soluta quam ducimus harum corrupti optio iste! Quos, consequuntur.',
     date: '17 октября, 2022'
+  },
+  {
+    id: '5',
+    href: 'project_details.html',
+    image: projectImage5,
+    images: [projectImage5, projectImage13, projectImage16],
+    tags: ['Декор', 'Спальня'],
+    place: 'Спальня',
+    title: 'Необычная спальня',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, vero. Alias, explicabo expedita veniam provident, quia excepturi adipisci minima, consectetur modi eaque labore iusto quas aliquid possimus accusantium dolore rerum dignissimos odio? Voluptatum cumque, omnis voluptatem repellendus officiis excepturi eveniet dignissimos hic commodi quaerat praesentium! Maxime odio corrupti recusandae porro beatae laboriosam omnis autem nostrum consequuntur amet cupiditate inventore quod, quis officiis quaerat exercitationem culpa deleniti assumenda ab saepe tenetur aliquid. Atque magni accusamus cupiditate voluptatibus vitae temporibus, autem aperiam neque eligendi ipsam rerum quae? Enim laboriosam, sunt incidunt nihil modi soluta quam ducimus harum corrupti optio iste! Quos, consequuntur.',
+    date: '18 ноября, 2022'
+  },
+  {
+    id: '6',
+    href: 'project_details.html',
+    image: projectImage6,
+    images: [projectImage6, projectImage7, projectImage14, projectImage15],
+    tags: ['Планировка', 'Ванная'],
+    place: 'Ванная',
+    title: 'Современная ванная комната',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, vero. Alias, explicabo expedita veniam provident, quia excepturi adipisci minima, consectetur modi eaque labore iusto quas aliquid possimus accusantium dolore rerum dignissimos odio? Voluptatum cumque, omnis voluptatem repellendus officiis excepturi eveniet dignissimos hic commodi quaerat praesentium! Maxime odio corrupti recusandae porro beatae laboriosam omnis autem nostrum consequuntur amet cupiditate inventore quod, quis officiis quaerat exercitationem culpa deleniti assumenda ab saepe tenetur aliquid. Atque magni accusamus cupiditate voluptatibus vitae temporibus, autem aperiam neque eligendi ipsam rerum quae? Enim laboriosam, sunt incidunt nihil modi soluta quam ducimus harum corrupti optio iste! Quos, consequuntur.',
+    date: '23 октября, 2022'
+  },
+  {
+    id: '7',
+    href: 'project_details.html',
+    image: projectImage7,
+    images: [projectImage7, projectImage6, projectImage14, projectImage15],
+    tags: ['Декор', 'Ванная'],
+    place: 'Ванная',
+    title: 'Стильная ванная комната',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, vero. Alias, explicabo expedita veniam provident, quia excepturi adipisci minima, consectetur modi eaque labore iusto quas aliquid possimus accusantium dolore rerum dignissimos odio? Voluptatum cumque, omnis voluptatem repellendus officiis excepturi eveniet dignissimos hic commodi quaerat praesentium! Maxime odio corrupti recusandae porro beatae laboriosam omnis autem nostrum consequuntur amet cupiditate inventore quod, quis officiis quaerat exercitationem culpa deleniti assumenda ab saepe tenetur aliquid. Atque magni accusamus cupiditate voluptatibus vitae temporibus, autem aperiam neque eligendi ipsam rerum quae? Enim laboriosam, sunt incidunt nihil modi soluta quam ducimus harum corrupti optio iste! Quos, consequuntur.',
+    date: '14 декабря, 2022'
+  },
+  {
+    id: '8',
+    href: 'project_details.html',
+    image: projectImage8,
+    tags: ['Декор', 'Гостиная'],
+    images: [projectImage8, projectImage4, projectImage2, projectImage10, projectImage12],
+    place: 'Гостиная',
+    title: 'Современная гостиная',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, vero. Alias, explicabo expedita veniam provident, quia excepturi adipisci minima, consectetur modi eaque labore iusto quas aliquid possimus accusantium dolore rerum dignissimos odio? Voluptatum cumque, omnis voluptatem repellendus officiis excepturi eveniet dignissimos hic commodi quaerat praesentium! Maxime odio corrupti recusandae porro beatae laboriosam omnis autem nostrum consequuntur amet cupiditate inventore quod, quis officiis quaerat exercitationem culpa deleniti assumenda ab saepe tenetur aliquid. Atque magni accusamus cupiditate voluptatibus vitae temporibus, autem aperiam neque eligendi ipsam rerum quae? Enim laboriosam, sunt incidunt nihil modi soluta quam ducimus harum corrupti optio iste! Quos, consequuntur.',
+    date: '11 ноября, 2022'
+  },
+  {
+    id: '9',
+    href: 'project_details.html',
+    image: projectImage9,
+    images: [projectImage9, projectImage1, projectImage11],
+    tags: ['Декор', 'Кухня'],
+    place: 'Кухня',
+    title: 'Стильная кухня',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, vero. Alias, explicabo expedita veniam provident, quia excepturi adipisci minima, consectetur modi eaque labore iusto quas aliquid possimus accusantium dolore rerum dignissimos odio? Voluptatum cumque, omnis voluptatem repellendus officiis excepturi eveniet dignissimos hic commodi quaerat praesentium! Maxime odio corrupti recusandae porro beatae laboriosam omnis autem nostrum consequuntur amet cupiditate inventore quod, quis officiis quaerat exercitationem culpa deleniti assumenda ab saepe tenetur aliquid. Atque magni accusamus cupiditate voluptatibus vitae temporibus, autem aperiam neque eligendi ipsam rerum quae? Enim laboriosam, sunt incidunt nihil modi soluta quam ducimus harum corrupti optio iste! Quos, consequuntur.',
+    date: '15 июня, 2022'
+  },
+  {
+    id: '10',
+    href: 'project_details.html',
+    image: projectImage10,
+    images: [projectImage10, projectImage4, projectImage8, projectImage2, projectImage12],
+    tags: ['Планировка', 'Гостиная'],
+    place: 'Гостиная',
+    title: 'Яркая гостиная',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, vero. Alias, explicabo expedita veniam provident, quia excepturi adipisci minima, consectetur modi eaque labore iusto quas aliquid possimus accusantium dolore rerum dignissimos odio? Voluptatum cumque, omnis voluptatem repellendus officiis excepturi eveniet dignissimos hic commodi quaerat praesentium! Maxime odio corrupti recusandae porro beatae laboriosam omnis autem nostrum consequuntur amet cupiditate inventore quod, quis officiis quaerat exercitationem culpa deleniti assumenda ab saepe tenetur aliquid. Atque magni accusamus cupiditate voluptatibus vitae temporibus, autem aperiam neque eligendi ipsam rerum quae? Enim laboriosam, sunt incidunt nihil modi soluta quam ducimus harum corrupti optio iste! Quos, consequuntur.',
+    date: '29 августа, 2022'
+  },
+  {
+    id: '11',
+    href: 'project_details.html',
+    image: projectImage11,
+    images: [projectImage11, projectImage9, projectImage1],
+    tags: ['Декор', 'Кухня'],
+    place: 'Кухня',
+    title: 'Яркая кухня',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, vero. Alias, explicabo expedita veniam provident, quia excepturi adipisci minima, consectetur modi eaque labore iusto quas aliquid possimus accusantium dolore rerum dignissimos odio? Voluptatum cumque, omnis voluptatem repellendus officiis excepturi eveniet dignissimos hic commodi quaerat praesentium! Maxime odio corrupti recusandae porro beatae laboriosam omnis autem nostrum consequuntur amet cupiditate inventore quod, quis officiis quaerat exercitationem culpa deleniti assumenda ab saepe tenetur aliquid. Atque magni accusamus cupiditate voluptatibus vitae temporibus, autem aperiam neque eligendi ipsam rerum quae? Enim laboriosam, sunt incidunt nihil modi soluta quam ducimus harum corrupti optio iste! Quos, consequuntur.',
+    date: '3 сентября, 2022'
+  },
+  {
+    id: '12',
+    href: 'project_details.html',
+    image: projectImage12,
+    images: [projectImage12, projectImage4, projectImage8, projectImage10, projectImage2],
+    tags: ['Декор', 'Гостиная'],
+    place: 'Гостиная',
+    title: 'Спокойная гостиная',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, vero. Alias, explicabo expedita veniam provident, quia excepturi adipisci minima, consectetur modi eaque labore iusto quas aliquid possimus accusantium dolore rerum dignissimos odio? Voluptatum cumque, omnis voluptatem repellendus officiis excepturi eveniet dignissimos hic commodi quaerat praesentium! Maxime odio corrupti recusandae porro beatae laboriosam omnis autem nostrum consequuntur amet cupiditate inventore quod, quis officiis quaerat exercitationem culpa deleniti assumenda ab saepe tenetur aliquid. Atque magni accusamus cupiditate voluptatibus vitae temporibus, autem aperiam neque eligendi ipsam rerum quae? Enim laboriosam, sunt incidunt nihil modi soluta quam ducimus harum corrupti optio iste! Quos, consequuntur.',
+    date: '17 июля, 2022'
+  },
+  {
+    id: '13',
+    href: 'project_details.html',
+    image: projectImage13,
+    images: [projectImage13, projectImage5, projectImage16],
+    tags: ['Декор', 'Спальня'],
+    place: 'Спальня',
+    title: 'Приятная спальня',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, vero. Alias, explicabo expedita veniam provident, quia excepturi adipisci minima, consectetur modi eaque labore iusto quas aliquid possimus accusantium dolore rerum dignissimos odio? Voluptatum cumque, omnis voluptatem repellendus officiis excepturi eveniet dignissimos hic commodi quaerat praesentium! Maxime odio corrupti recusandae porro beatae laboriosam omnis autem nostrum consequuntur amet cupiditate inventore quod, quis officiis quaerat exercitationem culpa deleniti assumenda ab saepe tenetur aliquid. Atque magni accusamus cupiditate voluptatibus vitae temporibus, autem aperiam neque eligendi ipsam rerum quae? Enim laboriosam, sunt incidunt nihil modi soluta quam ducimus harum corrupti optio iste! Quos, consequuntur.',
+    date: '18 июля, 2022'
+  },
+  {
+    id: '14',
+    href: 'project_details.html',
+    image: projectImage14,
+    images: [projectImage14, projectImage7, projectImage6, projectImage15],
+    tags: ['Планировка', 'Ванная'],
+    place: 'Ванная',
+    title: 'Необычная ванная комната',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, vero. Alias, explicabo expedita veniam provident, quia excepturi adipisci minima, consectetur modi eaque labore iusto quas aliquid possimus accusantium dolore rerum dignissimos odio? Voluptatum cumque, omnis voluptatem repellendus officiis excepturi eveniet dignissimos hic commodi quaerat praesentium! Maxime odio corrupti recusandae porro beatae laboriosam omnis autem nostrum consequuntur amet cupiditate inventore quod, quis officiis quaerat exercitationem culpa deleniti assumenda ab saepe tenetur aliquid. Atque magni accusamus cupiditate voluptatibus vitae temporibus, autem aperiam neque eligendi ipsam rerum quae? Enim laboriosam, sunt incidunt nihil modi soluta quam ducimus harum corrupti optio iste! Quos, consequuntur.',
+    date: '23 сентября, 2022'
+  },
+  {
+    id: '15',
+    href: 'project_details.html',
+    image: projectImage15,
+    images: [projectImage15, projectImage7, projectImage14, projectImage6],
+    tags: ['Декор', 'Ванная'],
+    place: 'Ванная',
+    title: 'Тёплая ванная комната',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, vero. Alias, explicabo expedita veniam provident, quia excepturi adipisci minima, consectetur modi eaque labore iusto quas aliquid possimus accusantium dolore rerum dignissimos odio? Voluptatum cumque, omnis voluptatem repellendus officiis excepturi eveniet dignissimos hic commodi quaerat praesentium! Maxime odio corrupti recusandae porro beatae laboriosam omnis autem nostrum consequuntur amet cupiditate inventore quod, quis officiis quaerat exercitationem culpa deleniti assumenda ab saepe tenetur aliquid. Atque magni accusamus cupiditate voluptatibus vitae temporibus, autem aperiam neque eligendi ipsam rerum quae? Enim laboriosam, sunt incidunt nihil modi soluta quam ducimus harum corrupti optio iste! Quos, consequuntur.',
+    date: '14 марта, 2022'
+  },
+  {
+    id: '16',
+    href: 'project_details.html',
+    image: projectImage16,
+    images: [projectImage16, projectImage13, projectImage5],
+    tags: ['Декор', 'Спальня'],
+    place: 'Спальня',
+    title: 'Красивая спальня',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, vero. Alias, explicabo expedita veniam provident, quia excepturi adipisci minima, consectetur modi eaque labore iusto quas aliquid possimus accusantium dolore rerum dignissimos odio? Voluptatum cumque, omnis voluptatem repellendus officiis excepturi eveniet dignissimos hic commodi quaerat praesentium! Maxime odio corrupti recusandae porro beatae laboriosam omnis autem nostrum consequuntur amet cupiditate inventore quod, quis officiis quaerat exercitationem culpa deleniti assumenda ab saepe tenetur aliquid. Atque magni accusamus cupiditate voluptatibus vitae temporibus, autem aperiam neque eligendi ipsam rerum quae? Enim laboriosam, sunt incidunt nihil modi soluta quam ducimus harum corrupti optio iste! Quos, consequuntur.',
+    date: '5 ноября, 2022'
   }
 ]
 

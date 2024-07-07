@@ -35,4 +35,8 @@ function getChosenPostId () {
   return localStorage.getItem('chosenPostId')
 }
 
-export { parseDate, savePostId, getChosenPostId }
+function getRandomBool () {
+  return Math.random() < 0.5
+}
+
+export { parseDate, savePostId, getChosenPostId, getRandomBool }
