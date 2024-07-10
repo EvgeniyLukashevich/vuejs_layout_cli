@@ -1,18 +1,16 @@
 <script>
 import ChosenPostBlock from '@/components/blocks/ChosenPostBlock.vue'
-import { blogItems } from '@/services/inputData'
 
 export default {
   name: 'BlogDetailsMainSection',
   components: {
     ChosenPostBlock
   },
-  props: ['currentTag'],
+  props: ['currentTag', 'items'],
   data () {
     return {
-      uniqueTags: [],
-      selectedTag: '',
-      items: blogItems
+      uniqueTags: null,
+      selectedTag: ''
     }
   },
   methods: {
@@ -34,20 +32,20 @@ export default {
       }
     }
   },
-  mounted () {
+  created () {
     this.setUniqueTags()
   }
 }
 </script>
 
 <template>
-  <section class="blog-details center">
+  <section class="blog-details center" >
     <div class="blog-details-area container">
       <ChosenPostBlock :items="items"></ChosenPostBlock>
 
-      <div class="blog-details__tags">
+      <div class="blog-details__tags" >
         <h3 class="blog-details__tags__title">Тэги</h3>
-        <div class="blog-details__tags-box">
+        <div class="blog-details__tags-box" v-if="uniqueTags">
           <p class="blog-details__tags-box__tag"
              v-for="tag in uniqueTags" @click="setCurrentTag(tag)"
              :class="{ 'selected-tag': tag === selectedTag }"

@@ -4,6 +4,7 @@ import FooterSection from '@/components/sections/FooterSection.vue'
 import BlogLastPostSection from '@/components/sections/BlogLastPostSection.vue'
 import BlogCardsSection from '@/components/sections/BlogCardsSection.vue'
 import RegularBannerSection from '@/components/sections/RegularBannerSection.vue'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'BlogPage',
@@ -30,6 +31,15 @@ export default {
       firstCardIndex: 1,
       lastCardIndex: 6
     }
+  },
+  computed: {
+    ...mapGetters('blogStore', ['blogItemsList', 'sortedByDateBlogItems'])
+  },
+  methods: {
+    ...mapActions('blogStore', ['fetchBlogData'])
+  },
+  mounted () {
+    this.fetchBlogData()
   }
 }
 </script>
@@ -38,8 +48,9 @@ export default {
   <HeaderSection></HeaderSection>
   <RegularBannerSection :is-crumbs="isCrumbs" :title="title" :crumbs-current-link="crumbsCurrentLink"
                         :crumbs-link="crumbsLink" :page-name="pageName"></RegularBannerSection>
-  <BlogLastPostSection></BlogLastPostSection>
-  <BlogCardsSection :index-start="firstCardIndex" :index-end="lastCardIndex"></BlogCardsSection>
+  <BlogLastPostSection v-if="sortedByDateBlogItems" :sorted-by-date-items="sortedByDateBlogItems"></BlogLastPostSection>
+  <BlogCardsSection v-if="sortedByDateBlogItems" :index-start="firstCardIndex" :index-end="lastCardIndex"
+                    :sorted-by-date-items="sortedByDateBlogItems"></BlogCardsSection>
   <FooterSection></FooterSection>
 </template>
 

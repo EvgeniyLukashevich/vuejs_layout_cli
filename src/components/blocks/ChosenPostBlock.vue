@@ -6,7 +6,7 @@ export default {
   props: ['items'],
   computed: {
     chosenPost () {
-      return this.items.find((item) => item.id === getChosenPostId())
+      return this.items.find((item) => item.id === getChosenPostId()) || this.items[0]
     }
   }
 
@@ -14,7 +14,7 @@ export default {
 </script>
 
 <template>
-  <div class="post">
+  <div class="post" v-if="chosenPost">
     <h3 class="post__title">{{ chosenPost.title }}</h3>
     <div class="post__image-box">
       <img :src="chosenPost.image" :alt="chosenPost.title" class="post__image-box__image">

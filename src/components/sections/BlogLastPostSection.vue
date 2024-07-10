@@ -1,8 +1,5 @@
 <script>
 import PostCardBlock from '@/components/blocks/PostCardBlock.vue'
-// import TitleRegular from '@/components/partials/TitleRegular.vue'
-import { blogItems } from '@/services/inputData'
-import { parseDate } from '@/utils/utils'
 
 export default {
   name: 'BlogLastPostSection',
@@ -10,18 +7,13 @@ export default {
     PostCardBlock
     // TitleRegular
   },
+  props: ['sortedByDateItems'],
   data () {
     return {
-      items: blogItems,
       title: 'Последний пост'
     }
   },
   computed: {
-    sortedByDateItems () {
-      return [...this.items].sort((a, b) => {
-        return parseDate(b.date) - parseDate(a.date)
-      })
-    },
     lastItem () {
       return this.sortedByDateItems[0]
     }
@@ -33,7 +25,6 @@ export default {
   <section class="blog-last-post center">
     <div class="blog-last-post-area container">
       <h2 class="blog-last-post__title">{{ title }}</h2>
-<!--      <TitleRegular :title-text="title"></TitleRegular>-->
       <PostCardBlock :item="lastItem"></PostCardBlock>
     </div>
   </section>

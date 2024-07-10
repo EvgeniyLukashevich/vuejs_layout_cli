@@ -1,11 +1,15 @@
 <script>
 
+import { saveProjectId } from '@/utils/utils'
+
+
 export default {
   name: 'ProjectCardBlock',
   methods: {
     getImageBoxClass (index) {
       return `project-card__image-box project-card__image-box${index}`
-    }
+    },
+    saveChosenProjectId: saveProjectId
   },
   props: {
     item: {
@@ -23,7 +27,7 @@ export default {
 </script>
 
 <template>
-  <a class="project-card" :href="item.href">
+  <a class="project-card" :href="item.href" @click="saveChosenProjectId(project.id)">
     <div :class="getImageBoxClass(cardNum)">
       <img :src="item.image" :alt="item.title" class="project-card__image-box__image">
     </div>

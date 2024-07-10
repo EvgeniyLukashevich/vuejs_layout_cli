@@ -31,12 +31,20 @@ function savePostId (postId) {
   }
 }
 
+function saveProjectId (projectId) {
+  if (projectId) {
+    localStorage.setItem('chosenProjectId', projectId)
+  } else {
+    localStorage.setItem('chosenProjectId', '1')
+  }
+}
+
+function getChosenProjectId () {
+  return localStorage.getItem('chosenProjectId') || 1
+}
+
 function getChosenPostId () {
-  return localStorage.getItem('chosenPostId')
+  return localStorage.getItem('chosenPostId') || 1
 }
 
-function getRandomBool () {
-  return Math.random() < 0.5
-}
-
-export { parseDate, savePostId, getChosenPostId, getRandomBool }
+export { parseDate, savePostId, getChosenPostId, saveProjectId, getChosenProjectId }

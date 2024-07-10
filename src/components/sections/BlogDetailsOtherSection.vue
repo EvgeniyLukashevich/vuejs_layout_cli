@@ -1,6 +1,5 @@
 <script>
 import PostCardBlock from '@/components/blocks/PostCardBlock.vue'
-import { parseDate } from '@/utils/utils'
 import { blogItems } from '@/services/inputData'
 import TitleRegular from '@/components/partials/TitleRegular.vue'
 
@@ -10,7 +9,7 @@ export default {
     TitleRegular,
     PostCardBlock
   },
-  props: ['currentTag'],
+  props: ['currentTag', 'sortedByDateItems'],
   data () {
     return {
       title: 'Другие статьи',
@@ -18,11 +17,6 @@ export default {
     }
   },
   computed: {
-    sortedByDateItems () {
-      return [...this.items].sort((a, b) => {
-        return parseDate(b.date) - parseDate(a.date)
-      })
-    },
     filteredByTagItems () {
       if (this.currentTag) {
         return [...this.items].filter(item => item.tags.includes(this.currentTag))

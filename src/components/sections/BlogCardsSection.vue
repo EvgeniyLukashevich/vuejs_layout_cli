@@ -1,6 +1,4 @@
 <script>
-import { parseDate } from '@/utils/utils.js'
-import { blogItems } from '@/services/inputData.js'
 import PostCardMiniBlock from '@/components/blocks/PostCardMiniBlock.vue'
 import HeadingRegularBlock from '@/components/blocks/HeadingRegularBlock.vue'
 
@@ -10,19 +8,11 @@ export default {
     PostCardMiniBlock,
     HeadingRegularBlock
   },
-  props: ['indexStart', 'indexEnd'],
+  props: ['indexStart', 'indexEnd', 'sortedByDateItems'],
   data () {
     return {
       title: 'Статьи & Новости',
-      subTitle: 'Хорошо известно, что читатель будет отвлекаться на читабельный контент страницы',
-      items: blogItems
-    }
-  },
-  computed: {
-    sortedByDateItems () {
-      return [...this.items].sort((a, b) => {
-        return parseDate(b.date) - parseDate(a.date)
-      })
+      subTitle: 'Хорошо известно, что читатель будет отвлекаться на читабельный контент страницы'
     }
   }
 }

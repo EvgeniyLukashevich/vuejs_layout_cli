@@ -49,7 +49,7 @@ export default {
     background-image: url("@/assets/images/project-banner.jpeg")
 
   &-project-details
-    background-image: url("@/assets/images/blog-banner.jpeg")
+    background-image: url("@/assets/images/project-banner-details.jpeg")
 
   &-area
     position: relative

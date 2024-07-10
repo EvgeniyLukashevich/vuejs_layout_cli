@@ -1,18 +1,20 @@
 <script>
-import { projectItems } from '@/services/inputData'
 import PlacesBoxBlock from '@/components/blocks/PlacesBoxBlock.vue'
 import ProjectCardRegularBlock from '@/components/blocks/ProjectCardRegularBlock.vue'
 
 export default {
   name: 'ProjectsSection',
-  components: { ProjectCardRegularBlock, PlacesBoxBlock },
+  components: {
+    ProjectCardRegularBlock,
+    PlacesBoxBlock
+  },
+  props: ['items'],
   data () {
     return {
       uniquePlaces: [],
       selectedPlace: '',
-      items: projectItems,
       currentPage: 1,
-      itemsPerPage: 4
+      itemsPerPage: 8
     }
   },
   methods: {
@@ -65,7 +67,8 @@ export default {
         <ProjectCardRegularBlock :projects="paginatedProjects"></ProjectCardRegularBlock>
       </div>
       <div class="projects__pagination">
-        <button class="projects__pagination__page" v-for="page in pageCount" :key="page" :class="{'active-page': currentPage === page}"
+        <button class="projects__pagination__page" v-for="page in pageCount" :key="page"
+                :class="{'active-page': currentPage === page}"
                 @click="turnPage(page)">{{ page }}
         </button>
       </div>
@@ -87,11 +90,13 @@ export default {
     grid-template-rows: repeat(auto-fill, 1fr)
     grid-template-columns: repeat(2, 1fr)
     gap: 1.4rem
+
   &__pagination
     margin-top: 2.7rem
     display: flex
     justify-content: center
     gap: 1.2rem
+
     &__page
       cursor: pointer
       background-color: transparent
@@ -101,6 +106,7 @@ export default {
       border-radius: 1.2rem
       border: 1px solid $colorStylish
       transition: all .3s
+
       &:hover
         background-color: $colorStylish
         color: white

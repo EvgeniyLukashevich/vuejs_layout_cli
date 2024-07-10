@@ -1,8 +1,6 @@
 <script>
 import HeadingRegularBlock from '@/components/blocks/HeadingRegularBlock.vue'
 import ProjectCardBlock from '@/components/blocks/ProjectCardBlock.vue'
-import { parseDate } from '@/utils/utils.js'
-import { projectItems } from '@/services/inputData.js'
 
 export default {
   name: 'IndexProjectSection',
@@ -10,18 +8,11 @@ export default {
     HeadingRegularBlock,
     ProjectCardBlock
   },
+  props: ['sortedByDateItems'],
   data () {
     return {
       title: 'Следите за нашими проектами',
-      subtitle: 'Хорошо известно, что читатель будет отвлекаться на читабельный контент страницы',
-      items: projectItems
-    }
-  },
-  computed: {
-    sortedByDateItems () {
-      return [...this.items].sort((a, b) => {
-        return parseDate(b.date) - parseDate(a.date)
-      })
+      subtitle: 'Хорошо известно, что читатель будет отвлекаться на читабельный контент страницы'
     }
   }
 }
