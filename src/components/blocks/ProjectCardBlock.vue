@@ -1,10 +1,12 @@
 <script>
 
 import { saveProjectId } from '@/utils/utils'
+import { mapMutations } from 'vuex'
 
 export default {
   name: 'ProjectCardBlock',
   methods: {
+    ...mapMutations('projectStore', ['SET_CHOSEN_PROJECT']),
     getImageBoxClass (index) {
       return `project-card__image-box project-card__image-box${index}`
     },
@@ -26,7 +28,8 @@ export default {
 </script>
 
 <template>
-  <router-link class="project-card" :to="'project-details'" @click="saveChosenProjectId(item.id)">
+  <router-link class="project-card" :to="{ name: 'project-details', params: { id: item.id }}"
+               @click="SET_CHOSEN_PROJECT(item)">
     <div :class="getImageBoxClass(cardNum)">
       <img :src="item.image" :alt="item.title" class="project-card__image-box__image">
     </div>

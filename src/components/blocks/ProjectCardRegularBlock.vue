@@ -1,12 +1,11 @@
 <script>
-
-import { saveProjectId } from '@/utils/utils'
+import { mapMutations } from 'vuex'
 
 export default {
   name: 'ProjectCardRegularBlock',
   props: ['projects'],
   methods: {
-    saveChosenProjectId: saveProjectId,
+    ...mapMutations('projectStore', ['SET_CHOSEN_PROJECT']),
     getCardClass (index) {
       return index % 2 !== 0 ? 'project-card-small' : 'project-card-large'
     }
@@ -15,8 +14,9 @@ export default {
 </script>
 
 <template>
-  <router-link :class="getCardClass(index)" :to="'project-details'" v-for="(project, index) in projects" :key="project.id"
-     @click="saveChosenProjectId(project.id)">
+  <router-link :class="getCardClass(index)" :to="{ name: 'project-details', params: { id:project.id } }"
+               v-for="(project, index) in projects" :key="project.id"
+               @click="SET_CHOSEN_PROJECT(project)">
     <div class="image-box">
       <img class="image" :src="project.image" :alt="project.title">
     </div>

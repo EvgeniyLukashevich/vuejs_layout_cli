@@ -1,6 +1,5 @@
 <script>
-import { mapActions, mapGetters } from 'vuex'
-import { getChosenProjectId } from '@/utils/utils'
+import { mapActions, mapGetters, mapMutations } from 'vuex'
 
 export default {
   name: 'ProjectDetailsMainSection',
@@ -10,10 +9,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('projectStore', ['projectItemsList']),
-    chosenProject () {
-      return this.projectItemsList.find((item) => item.id === getChosenProjectId()) || this.projectItemsList[0]
-    },
+    ...mapGetters('projectStore', ['chosenProject', 'projectItemsList']),
     images () {
       return this.chosenProject.images
     },
@@ -25,7 +21,8 @@ export default {
     }
   },
   methods: {
-    ...mapActions('projectStore', ['fetchProjectData']),
+    ...mapActions('projectStore', ['fetchProjectData', 'fetchChosenProject']),
+    ...mapMutations('projectStore', ['SET_CHOSEN_PROJECT']),
     prevImage () {
       this.currentImageIndex = (this.currentImageIndex - 1 + this.totalImages) % this.totalImages
     },
@@ -37,13 +34,17 @@ export default {
     }
   },
   mounted () {
-    this.fetchProjectData()
+    if (!this.chosenProject) {
+      this.fetchProjectData()
+      const projectId = this.$route.params.id
+      this.fetchChosenProject(projectId)
+    }
   }
 }
 </script>
 
 <template>
-  <section class="project center" v-if="projectItemsList">
+  <section class="project center" v-if="chosenProject">
     <div class="project-area container">
       <div class="project__content">
         <h2 class="project__content__title">{{ chosenProject.title }}</h2>
@@ -85,14 +86,17 @@ export default {
     flex-direction: column
     align-items: center
     gap: 5rem
+
   &__content
     display: flex
     flex-direction: column
     margin-top: 9rem
     width: 30rem
     gap: .5rem
+
     &__title
       font-size: 2.3rem
+
 .project__slider
   position: relative
   display: flex
@@ -109,7 +113,7 @@ export default {
     background-position: center
     border-radius: 1rem
 
-    &:hover .project__slider__controls__zoom-button,  &:hover .project__slider__controls__control
+    &:hover .project__slider__controls__zoom-button, &:hover .project__slider__controls__control
       opacity: 0.7
 
     &__image
@@ -123,6 +127,7 @@ export default {
       filter: saturate(.8)
       transition: all .3s
       border-radius: 1rem
+
       &:hover
         filter: saturate(1)
 
@@ -163,6 +168,7 @@ export default {
       cursor: pointer
       transform: translate(-50%, -50%)
       transition: all .3s
+
       &:hover
         background-color: $colorStylishBright
         box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2)
@@ -181,6 +187,7 @@ export default {
       background-color: transparent
       cursor: pointer
       transition: all .3s
+
       &:hover
         background-color: $colorStylish
 
