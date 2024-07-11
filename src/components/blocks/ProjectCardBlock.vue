@@ -1,6 +1,4 @@
 <script>
-
-import { saveProjectId } from '@/utils/utils'
 import { mapMutations } from 'vuex'
 
 export default {
@@ -9,8 +7,7 @@ export default {
     ...mapMutations('projectStore', ['SET_CHOSEN_PROJECT']),
     getImageBoxClass (index) {
       return `project-card__image-box project-card__image-box${index}`
-    },
-    saveChosenProjectId: saveProjectId
+    }
   },
   props: {
     item: {

@@ -23,28 +23,4 @@ function parseDate (dateString) {
   return new Date(year, months[month], parseInt(day))
 }
 
-function savePostId (postId) {
-  if (postId) {
-    localStorage.setItem('chosenPostId', postId)
-  } else {
-    localStorage.setItem('chosenPostId', '1')
-  }
-}
-
-function saveProjectId (projectId) {
-  if (projectId) {
-    localStorage.setItem('chosenProjectId', projectId)
-  } else {
-    localStorage.setItem('chosenProjectId', '1')
-  }
-}
-
-function getChosenProjectId () {
-  return localStorage.getItem('chosenProjectId') || 1
-}
-
-function getChosenPostId () {
-  return localStorage.getItem('chosenPostId') || 1
-}
-
-export { parseDate, savePostId, getChosenPostId, saveProjectId, getChosenProjectId }
+export { parseDate }
