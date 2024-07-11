@@ -17,7 +17,7 @@ export default {
 </script>
 
 <template>
-  <a :href="item.href" @click="saveChosenPostId(item.id)" :key="item.id"
+  <router-link :to="'blog-details'" @click="saveChosenPostId(item.id)" :key="item.id"
      class="card-mini">
     <div class="card-mini__image-box">
       <img :src="item.image" :alt="item.tag" class="card-mini__image-box__image">
@@ -34,7 +34,7 @@ export default {
       </p>
       <div class="card-mini__bottom-box__button fas fa-chevron-right"></div>
     </div>
-  </a>
+  </router-link>
 </template>
 
 <style scoped lang="sass">

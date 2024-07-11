@@ -13,7 +13,7 @@ const getters = {
         return parseDate(b.date) - parseDate(a.date)
       })
     } catch (error) {
-      console.log(`ОШИБКА: ${error}`)
+      console.log('Подгружаем project-данные')
       return null
     }
   },

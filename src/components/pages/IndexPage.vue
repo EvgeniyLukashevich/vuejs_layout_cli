@@ -1,21 +1,17 @@
 <script>
-import HeaderSection from '@/components/sections/HeaderSection.vue'
 import IndexBannerSection from '@/components/sections/IndexBannerSection.vue'
 import IndexProjectSection from '@/components/sections/IndexProjectSection.vue'
 import MetricsSection from '@/components/sections/MetricsSection.vue'
-import FooterSection from '@/components/sections/FooterSection.vue'
 import BlogCardsSection from '@/components/sections/BlogCardsSection.vue'
 import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'IndexPage',
   components: {
-    HeaderSection,
     IndexBannerSection,
     IndexProjectSection,
     MetricsSection,
-    BlogCardsSection,
-    FooterSection
+    BlogCardsSection
   },
   data () {
     return {
@@ -34,18 +30,17 @@ export default {
   mounted () {
     this.fetchBlogData()
     this.fetchProjectData()
+    window.scrollTo(0, 0)
   }
 }
 </script>
 
 <template>
-  <HeaderSection></HeaderSection>
   <IndexBannerSection></IndexBannerSection>
   <IndexProjectSection v-if="sortedByDateProjectItems" :sorted-by-date-items="sortedByDateProjectItems"></IndexProjectSection>
   <MetricsSection></MetricsSection>
   <BlogCardsSection v-if="sortedByDateBlogItems" :index-start="firstCardIndex" :index-end="lastCardIndex"
                     :sorted-by-date-items="sortedByDateBlogItems"></BlogCardsSection>
-  <FooterSection></FooterSection>
 </template>
 
 <style scoped lang="sass">

@@ -8,9 +8,9 @@ export default {
   },
   data () {
     return {
-      indexLinkData: { text: 'Домой', path: 'index.html' },
-      blogLinkData: { text: 'Блог', path: 'blog.html' },
-      projectLinkData: { text: 'Проект', path: 'project.html' }
+      indexLinkData: { text: 'Домой', path: '/home' },
+      blogLinkData: { text: 'Блог', path: '/blog' },
+      projectLinkData: { text: 'Проект', path: '/project' }
     }
   }
 }

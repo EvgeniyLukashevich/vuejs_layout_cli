@@ -15,7 +15,7 @@ export default {
 </script>
 
 <template>
-  <a :class="getCardClass(index)" :href="project.href" v-for="(project, index) in projects" :key="project.id"
+  <router-link :class="getCardClass(index)" :to="'project-details'" v-for="(project, index) in projects" :key="project.id"
      @click="saveChosenProjectId(project.id)">
     <div class="image-box">
       <img class="image" :src="project.image" :alt="project.title">
@@ -31,7 +31,7 @@ export default {
       </div>
       <div class="content__button fas fa-chevron-right"></div>
     </div>
-  </a>
+  </router-link>
 </template>
 
 <style scoped lang="sass">

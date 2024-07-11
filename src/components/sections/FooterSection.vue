@@ -29,7 +29,7 @@ export default {
 
 .footer
   margin-top: 4.4rem
-  margin-bottom: 4rem
+  margin-bottom: 1rem
 
   &-area
     display: flex

@@ -12,14 +12,17 @@ export default {
     }
   },
   methods: {
-    saveChosenPostId: savePostId
+    saveChosenPostId (id) {
+      savePostId(id)
+      window.location.reload()
+    }
   }
 }
 
 </script>
 
 <template>
-  <a :href="item.href" @click="saveChosenPostId(item.id)" class="card">
+  <router-link :to="'/blog-details'" @click="saveChosenPostId(item.id)" class="card" replace>
     <div class="card__image-box">
       <img :src="item.image" :alt="item.tag" class="card__image-box__image">
     </div>
@@ -40,7 +43,7 @@ export default {
         <div class="card__text-box__bottom-box__button fas fa-chevron-right"></div>
       </div>
     </div>
-  </a>
+  </router-link>
 </template>
 
 <style scoped lang="sass">

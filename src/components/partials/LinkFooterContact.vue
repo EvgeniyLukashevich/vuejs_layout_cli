@@ -1,12 +1,12 @@
 <script>
 export default {
-  name: 'LinkHeaderNav',
+  name: 'LinkFooterContact',
   props: ['linkText', 'linkPath']
 }
 </script>
 
 <template>
-  <router-link :to='linkPath' class="nav-link">{{ linkText }}</router-link>
+  <a :to="linkPath" class="nav-link">{{ linkText }}</a>
 </template>
 
 <style scoped lang="sass">
@@ -14,14 +14,9 @@ export default {
 @import '@/assets/styles/_vars.sass'
 
 .nav-link
-  display: inline-block
-  font-size: 0.9rem
-  padding: 2rem 1rem
-  color: $colorGeneral
+  width: 100%
+  padding: 0.7rem 0
   transition: all .3s
-
-  &:last-child
-    padding-right: 0
 
   &:hover
     color: $colorStylish

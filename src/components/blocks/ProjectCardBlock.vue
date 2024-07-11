@@ -2,7 +2,6 @@
 
 import { saveProjectId } from '@/utils/utils'
 
-
 export default {
   name: 'ProjectCardBlock',
   methods: {
@@ -27,7 +26,7 @@ export default {
 </script>
 
 <template>
-  <a class="project-card" :href="item.href" @click="saveChosenProjectId(project.id)">
+  <router-link class="project-card" :to="'project-details'" @click="saveChosenProjectId(item.id)">
     <div :class="getImageBoxClass(cardNum)">
       <img :src="item.image" :alt="item.title" class="project-card__image-box__image">
     </div>
@@ -42,7 +41,7 @@ export default {
       </div>
       <div class="project-card__content__button fas fa-chevron-right"></div>
     </div>
-  </a>
+  </router-link>
 </template>
 
 <style scoped lang="sass">

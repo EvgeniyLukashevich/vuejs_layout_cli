@@ -11,15 +11,15 @@ export default {
       title: 'Страницы',
       indexLinkData: {
         text: 'Домой',
-        path: 'index.html'
+        path: '/home'
       },
       blogLinkData: {
         text: 'Блог',
-        path: 'blog.html'
+        path: '/blog'
       },
       projectLinkData: {
         text: 'Проект',
-        path: 'project.html'
+        path: '/project'
       }
     }
   },

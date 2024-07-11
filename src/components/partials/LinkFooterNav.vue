@@ -6,7 +6,7 @@ export default {
 </script>
 
 <template>
-  <a :href="linkPath" class="nav-link">{{ linkText }}</a>
+  <router-link :to="linkPath" class="nav-link">{{ linkText }}</router-link>
 </template>
 
 <style scoped lang="sass">

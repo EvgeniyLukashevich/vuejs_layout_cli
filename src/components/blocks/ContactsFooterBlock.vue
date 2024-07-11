@@ -1,10 +1,10 @@
 <script>
-import LinkFooterNav from '@/components/partials/LinkFooterNav.vue'
+import LinkFooterContact from '@/components/partials/LinkFooterContact.vue'
 
 export default {
   name: 'ContactsFooterBlock',
   components: {
-    LinkFooterNav
+    LinkFooterContact
   },
   data () {
     return {
@@ -29,8 +29,8 @@ export default {
     <h3 class="footer-contacts__title">{{ title }}</h3>
     <div class="footer-contacts__box">
       <address class="footer-contacts__box-item">{{ address }}</address>
-      <link-footer-nav :link-text="telephoneNumber.text" :link-path="telephoneNumber.path"></link-footer-nav>
-      <link-footer-nav :link-text="email.text" :link-path="email.path"></link-footer-nav>
+      <link-footer-contact :link-text="telephoneNumber.text" :link-path="telephoneNumber.path"></link-footer-contact>
+      <link-footer-contact :link-text="email.text" :link-path="email.path"></link-footer-contact>
     </div>
   </div>
 </template>
