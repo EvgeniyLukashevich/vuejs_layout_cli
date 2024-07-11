@@ -1,15 +1,23 @@
 <script>
-import { getChosenPostId } from '@/utils/utils'
+import { mapActions, mapGetters, mapMutations } from 'vuex'
 
 export default {
   name: 'ChosenPostBlock',
   props: ['items'],
   computed: {
-    chosenPost () {
-      return this.items.find((item) => item.id === getChosenPostId()) || this.items[0]
+    ...mapGetters('blogStore', ['chosenPost', 'blogItemsList'])
+  },
+  methods: {
+    ...mapActions('blogStore', ['fetchBlogData', 'fetchChosenPost']),
+    ...mapMutations('blogStore', ['SET_CHOSEN_POST'])
+  },
+  mounted () {
+    if (!this.chosenPost) {
+      this.fetchBlogData()
+      const postId = this.$route.params.id
+      this.fetchChosenPost(postId)
     }
   }
-
 }
 </script>
 

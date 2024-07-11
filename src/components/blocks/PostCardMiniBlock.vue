@@ -1,5 +1,6 @@
 <script>
-import { savePostId } from '@/utils/utils.js'
+import { mapMutations } from 'vuex'
+
 export default {
   name: 'PostCardMiniBlock',
   props: {
@@ -11,14 +12,14 @@ export default {
     }
   },
   methods: {
-    saveChosenPostId: savePostId
+    ...mapMutations('blogStore', ['SET_CHOSEN_POST'])
   }
 }
 </script>
 
 <template>
-  <router-link :to="'blog-details'" @click="saveChosenPostId(item.id)" :key="item.id"
-     class="card-mini">
+  <router-link :to="{ name: 'blog-details', params: { id: item.id } }" @click="SET_CHOSEN_POST(item)" :key="item.id"
+               class="card-mini">
     <div class="card-mini__image-box">
       <img :src="item.image" :alt="item.tag" class="card-mini__image-box__image">
       <div class="card-mini__image-box__tags">
@@ -116,6 +117,7 @@ export default {
 
   &:hover &__bottom-box__button
     background-color: #fff
+
   &:hover &__image-box__image
     filter: saturate(1)
 </style>

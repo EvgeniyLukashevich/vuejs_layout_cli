@@ -1,5 +1,5 @@
 <script>
-import { savePostId } from '@/utils/utils'
+import { mapMutations } from 'vuex'
 
 export default {
   name: 'PostCardBlock',
@@ -12,9 +12,17 @@ export default {
     }
   },
   methods: {
-    saveChosenPostId (id) {
-      savePostId(id)
-      window.location.reload()
+    ...mapMutations('blogStore', ['SET_CHOSEN_POST']),
+    setChosenPost (post) {
+      this.SET_CHOSEN_POST(post)
+      if (this.$route.name === 'blog-details') {
+        const mainPost = document.querySelector('.blog-details')
+        if (mainPost) {
+          mainPost.scrollIntoView({ behavior: 'smooth' })
+        }
+      } else {
+        window.scrollTo(0, 0)
+      }
     }
   }
 }
@@ -22,7 +30,7 @@ export default {
 </script>
 
 <template>
-  <router-link :to="'/blog-details'" @click="saveChosenPostId(item.id)" class="card" replace>
+  <router-link :to="{ name: 'blog-details', params: { id: item.id } }" @click="setChosenPost(item)" class="card">
     <div class="card__image-box">
       <img :src="item.image" :alt="item.tag" class="card__image-box__image">
     </div>

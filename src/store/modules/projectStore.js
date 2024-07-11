@@ -40,7 +40,6 @@ const actions = {
   }) {
     if (!state.projectItemsList) {
       setTimeout(() => {
-        // этот пример также предполагает, что есть глобальная переменная projectItems
         commit('SET_PROJECT_ITEMS', projectItems)
       }, 1000)
     }
