@@ -2,9 +2,11 @@
 import RegularBannerSection from '@/components/sections/RegularBannerSection.vue'
 import ProjectsSection from '@/components/sections/ProjectsSection.vue'
 import { mapActions, mapGetters } from 'vuex'
+import LoadingSection from '@/components/sections/LoadingSection.vue'
 
 export default {
   components: {
+    LoadingSection,
     RegularBannerSection,
     ProjectsSection
   },
@@ -14,11 +16,11 @@ export default {
       pageName: 'project',
       isCrumbs: true,
       crumbsLink: {
-        href: 'index.html',
+        href: '/',
         text: 'Домой'
       },
       crumbsCurrentLink: {
-        href: 'project.html',
+        href: '/project',
         text: 'Проект'
       }
     }
@@ -39,6 +41,7 @@ export default {
 <template>
   <RegularBannerSection :is-crumbs="isCrumbs" :title="title" :crumbs-current-link="crumbsCurrentLink"
                         :crumbs-link="crumbsLink" :page-name="pageName"></RegularBannerSection>
+  <LoadingSection v-if="!sortedByDateProjectItems"></LoadingSection>
   <ProjectsSection v-if="sortedByDateProjectItems" :items="sortedByDateProjectItems"></ProjectsSection>
 </template>
 

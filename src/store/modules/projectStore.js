@@ -41,7 +41,7 @@ const actions = {
     if (!state.projectItemsList) {
       setTimeout(() => {
         commit('SET_PROJECT_ITEMS', projectItems)
-      }, 1000)
+      }, 1700)
     }
   },
   async fetchChosenProject ({

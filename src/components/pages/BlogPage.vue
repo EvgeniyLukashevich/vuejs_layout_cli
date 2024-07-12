@@ -3,10 +3,12 @@ import BlogLastPostSection from '@/components/sections/BlogLastPostSection.vue'
 import BlogCardsSection from '@/components/sections/BlogCardsSection.vue'
 import RegularBannerSection from '@/components/sections/RegularBannerSection.vue'
 import { mapActions, mapGetters } from 'vuex'
+import LoadingSection from '@/components/sections/LoadingSection.vue'
 
 export default {
   name: 'BlogPage',
   components: {
+    LoadingSection,
     BlogLastPostSection,
     BlogCardsSection,
     RegularBannerSection
@@ -17,11 +19,11 @@ export default {
       pageName: 'blog',
       isCrumbs: true,
       crumbsLink: {
-        href: 'index.html',
+        href: '/',
         text: 'Домой'
       },
       crumbsCurrentLink: {
-        href: 'blog.html',
+        href: '/blog',
         text: 'Блог'
       },
       firstCardIndex: 1,
@@ -44,6 +46,7 @@ export default {
 <template>
   <RegularBannerSection :is-crumbs="isCrumbs" :title="title" :crumbs-current-link="crumbsCurrentLink"
                         :crumbs-link="crumbsLink" :page-name="pageName"></RegularBannerSection>
+  <LoadingSection  v-if="!sortedByDateBlogItems"></LoadingSection>
   <BlogLastPostSection v-if="sortedByDateBlogItems" :sorted-by-date-items="sortedByDateBlogItems"></BlogLastPostSection>
   <BlogCardsSection v-if="sortedByDateBlogItems" :index-start="firstCardIndex" :index-end="lastCardIndex"
                     :sorted-by-date-items="sortedByDateBlogItems"></BlogCardsSection>

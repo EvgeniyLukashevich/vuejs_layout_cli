@@ -5,14 +5,14 @@ export default {
 </script>
 
 <template>
-  <a class="logo" href="index.html">
+  <router-link class="logo" to="/home">
     <img
       src="@/assets/images/Logo.png"
       alt=""
       class="logo__image"
     />
     <p class="logo__name">Interno</p>
-  </a>
+  </router-link>
 </template>
 
 <style scoped lang="sass">

@@ -1,7 +1,9 @@
 <template>
-  <HeaderSection/>
-  <router-view/>
-  <FooterSection/>
+  <div class="height-stretcher">
+    <HeaderSection/>
+    <router-view/>
+    <FooterSection/>
+  </div>
 </template>
 
 <script>
@@ -18,6 +20,10 @@ export default {
 }
 </script>
 
-<style lang="sass">
-
+<style lang="sass" scoped>
+.height-stretcher
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  min-height: 100vh
 </style>

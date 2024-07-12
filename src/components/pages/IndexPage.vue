@@ -4,10 +4,12 @@ import IndexProjectSection from '@/components/sections/IndexProjectSection.vue'
 import MetricsSection from '@/components/sections/MetricsSection.vue'
 import BlogCardsSection from '@/components/sections/BlogCardsSection.vue'
 import { mapActions, mapGetters } from 'vuex'
+import LoadingSection from '@/components/sections/LoadingSection.vue'
 
 export default {
   name: 'IndexPage',
   components: {
+    LoadingSection,
     IndexBannerSection,
     IndexProjectSection,
     MetricsSection,
@@ -37,8 +39,11 @@ export default {
 
 <template>
   <IndexBannerSection></IndexBannerSection>
-  <IndexProjectSection v-if="sortedByDateProjectItems" :sorted-by-date-items="sortedByDateProjectItems"></IndexProjectSection>
+  <LoadingSection v-if="!sortedByDateProjectItems"></LoadingSection>
+  <IndexProjectSection v-if="sortedByDateProjectItems"
+                       :sorted-by-date-items="sortedByDateProjectItems"></IndexProjectSection>
   <MetricsSection></MetricsSection>
+  <LoadingSection v-if="!sortedByDateBlogItems"></LoadingSection>
   <BlogCardsSection v-if="sortedByDateBlogItems" :index-start="firstCardIndex" :index-end="lastCardIndex"
                     :sorted-by-date-items="sortedByDateBlogItems"></BlogCardsSection>
 </template>

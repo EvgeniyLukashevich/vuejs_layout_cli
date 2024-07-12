@@ -1,8 +1,10 @@
 <script>
 import { mapActions, mapGetters, mapMutations } from 'vuex'
+import LoadingSection from '@/components/sections/LoadingSection.vue'
 
 export default {
   name: 'ProjectDetailsMainSection',
+  components: { LoadingSection },
   data () {
     return {
       currentImageIndex: 0
@@ -44,6 +46,7 @@ export default {
 </script>
 
 <template>
+  <LoadingSection v-if="!chosenProject"></LoadingSection>
   <section class="project center" v-if="chosenProject">
     <div class="project-area container">
       <div class="project__content">

@@ -3,10 +3,12 @@ import RegularBannerSection from '@/components/sections/RegularBannerSection.vue
 import BlogDetailsMainSection from '@/components/sections/BlogDetailsMainSection.vue'
 import BlogDetailsOtherSection from '@/components/sections/BlogDetailsOtherSection.vue'
 import { mapActions, mapGetters } from 'vuex'
+import LoadingSection from '@/components/sections/LoadingSection.vue'
 
 export default {
   name: 'BlogDetailsPage',
   components: {
+    LoadingSection,
     RegularBannerSection,
     BlogDetailsMainSection,
     BlogDetailsOtherSection
@@ -36,6 +38,7 @@ export default {
 
 <template>
     <RegularBannerSection :is-crumbs="isCrumbs" :page-name="pageName"></RegularBannerSection>
+    <LoadingSection v-if="!sortedByDateBlogItems"></LoadingSection>
     <BlogDetailsMainSection v-if="sortedByDateBlogItems" @saveCurrentTag="saveCurrentTag"
                             :items="sortedByDateBlogItems"></BlogDetailsMainSection>
     <BlogDetailsOtherSection v-if="sortedByDateBlogItems" :current-tag="currentTag"

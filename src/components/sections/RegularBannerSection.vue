@@ -21,9 +21,9 @@ export default {
       <div class="regular-banner__title-box" v-if="isCrumbs">
         <TitleRegular :title-text="title"></TitleRegular>
         <div class="regular-banner__title-box__nav">
-          <a :href="crumbsLink.href" class="regular-banner__title-box__nav__link">{{ crumbsLink.text }}</a> /
-          <a :href="crumbsCurrentLink.href"
-             class="regular-banner__title-box__nav__link current-link">{{ crumbsCurrentLink.text }}</a>
+          <router-link :to="crumbsLink.href" class="regular-banner__title-box__nav__link">{{ crumbsLink.text }}</router-link> /
+          <router-link :to="crumbsCurrentLink.href"
+             class="regular-banner__title-box__nav__link current-link">{{ crumbsCurrentLink.text }}</router-link>
         </div>
       </div>
     </div>
